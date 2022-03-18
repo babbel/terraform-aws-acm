@@ -9,7 +9,7 @@ This is a simplified version of the [`terraform-aws-modules/acm/aws`](https://re
 ```tf
 module "acm" {
   source  = "babbel/acm/aws"
-  version = "~> 1.0"
+  version = "~> 1.1"
 
   primary_domain_name = "example.com"
 
