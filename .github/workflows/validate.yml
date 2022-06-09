@@ -6,7 +6,7 @@ env:
   AWS_REGION: local
 
 jobs:
-  validate:
+  validate_terraform_versions:
     runs-on: ubuntu-20.04
 
     strategy:
@@ -28,3 +28,12 @@ jobs:
           terraform_version: ${{ matrix.terraform_version }}
       - run: terraform init
       - run: terraform validate
+
+  validate: # this is a workaround, see https://github.community/t/status-check-for-a-matrix-jobs/127354/6
+    if: ${{ always() }}
+    needs: [validate_terraform_versions]
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check build status of all needed jobs
+        if: ${{ needs.validate_terraform_versions.result != 'success' }}
+        run: exit 1
