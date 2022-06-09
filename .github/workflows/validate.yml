@@ -2,9 +2,6 @@ name: Validate
 
 on: push
 
-env:
-  AWS_REGION: local
-
 jobs:
   validate_terraform_versions:
     runs-on: ubuntu-20.04

@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "local"
+}
+
 module "acm" {
   source  = "./.."
 
