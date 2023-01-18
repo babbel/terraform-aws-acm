@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "acm" {
-  source  = "./.."
+  source = "./.."
 
   primary_domain_name = "example.com"
 
@@ -13,7 +13,7 @@ module "acm" {
   }
 
   tags = {
-    app  = "some-service"
-    env  = "production"
+    app = "some-service"
+    env = "production"
   }
 }
