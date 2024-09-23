@@ -3,7 +3,7 @@ variable "acm_certificate_tags" {
   default = {}
 
   description = <<EOS
-Map of tags assigned to the ACM certificate.
+Map of tags assigned to the ACM certificate created by this module. Tags in this map will override tags in `var.default_tags`.
 EOS
 }
 
