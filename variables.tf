@@ -1,3 +1,12 @@
+variable "acm_certificate_tags" {
+  type    = map(string)
+  default = {}
+
+  description = <<EOS
+Map of tags assigned to the ACM certificate.
+EOS
+}
+
 variable "default_tags" {
   type    = map(string)
   default = {}
