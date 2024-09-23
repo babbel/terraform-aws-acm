@@ -12,7 +12,7 @@ module "acm" {
     "www.example.com" = "YZXYZXYZXYZXYZX"
   }
 
-  tags = {
+  default_tags = {
     app = "some-service"
     env = "production"
   }
