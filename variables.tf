@@ -1,3 +1,12 @@
+variable "acm_certificate_tags" {
+  type    = map(string)
+  default = {}
+
+  description = <<EOS
+Map of tags assigned to the ACM certificate created by this module. Tags in this map will override tags in `var.default_tags`.
+EOS
+}
+
 variable "default_tags" {
   type    = map(string)
   default = {}
